@@ -21,4 +21,16 @@
     <input type="text" [(ngModel)]="address"/>
     <p>{{address}}</p>
   </div>
+
+  <!-- directives practice -->
+  <div>
+    <ul [ngStyle]="{textAlign: 'left', listStyle: 'none',}">
+      <li *ngFor="let language of languages; let i=index;">{{i+1}}. {{language}}</li>
+    </ul>
+    <p *ngIf="isFullStackDeveloper; else notFoundDeveloper">
+      <strong [ngClass]="{isActive: isFullStackDeveloper}">Developer name is {{firstName}} {{lastName}}</strong>
+    </p>
+
+    <ng-template #notFoundDeveloper>Developer Not Found.</ng-template>
+  </div>
 </div>

@@ -11,14 +11,18 @@ export class AppComponent {
   lastName:string = 'developer';
   address:string = 'your current address';
 
+  languages:string[];
+
   isFullStackDeveloper:Boolean;
 
   constructor(){
     this.isFullStackDeveloper = true;
+    this.languages = ["C", "Javascript", "Node js", "React", "Angular", "Vue js", "Mongodb", "Mysql"]
   }
 
   toggleCheckBox(){
     this.isFullStackDeveloper = !this.isFullStackDeveloper;
   }
+
 
 }
