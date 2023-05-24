@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  firstName:string = 'angular';
+  lastName:string = 'developer';
+  address:string = 'your current address';
+
+  isFullStackDeveloper:Boolean;
+
+  constructor(){
+    this.isFullStackDeveloper = true;
+  }
+
+  toggleCheckBox(){
+    this.isFullStackDeveloper = !this.isFullStackDeveloper;
+  }
+
 }
