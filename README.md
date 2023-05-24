@@ -49,7 +49,7 @@ Angular is cross-platform, fast, scalable, has incredible tooling, and is loved 
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`. You can use `--spac false` to omit the testing part.
 
 ```
 cd [PROJECT NAME]
