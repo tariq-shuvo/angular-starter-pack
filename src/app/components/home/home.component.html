@@ -1,1 +1,53 @@
 <p>home works!</p>
+<div class="row justify-content-center">
+    <h3 class="text-center">Employee</h3>
+    <div class="col-md-6 mb-4">
+        <form #employeeInfoData="ngForm" (ngSubmit)="addEmployeeInfo(employeeInfoData)">
+            <div class="form-group mt-2">
+                <label for="name">Name</label>
+                <input type="text" [(ngModel)]="employeeInfo.name" name="name" class="form-control" id="name" placeholder="Enter username"/>
+              </div>
+              <div class="form-group mt-2">
+                <label for="salary">Salary</label>
+                <input type="number" [(ngModel)]="employeeInfo.salary" name="salary" class="form-control" id="salary" placeholder="password"/>
+              </div>
+              <div class="form-group mt-2">
+                <label for="age">Age</label>
+                <input type="number" [(ngModel)]="employeeInfo.age" name="age" class="form-control" id="age" placeholder="password"/>
+              </div>
+              <button type="submit" class="btn btn-primary mt-2">Save</button>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">Employee ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Salary</th>
+                  <th scope="col">Age</th>
+                  <th>Action</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="employees.length>0;else notFoundEmployee;">
+                <tr *ngFor="let employee of employees; let i = index;">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.employee_name}}</td>
+                    <td>{{employee.employee_salary}}</td>
+                    <td>{{employee.employee_age}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-info mr-2">edit</button>
+                        <button class="btn btn-sm btn-danger mr-2">delete</button>
+                    </td>
+                </tr>
+            </tbody>  
+            <ng-template #notFoundEmployee>
+                <tbody>
+                    <tr>
+                        <td colspan="5">Employees Not Found.</td>
+                    </tr>
+                </tbody>
+            </ng-template>  
+        </table>
+    </div>
+</div>
