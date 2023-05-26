@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { LoginInfo } from './model/login-info';
 
 @Component({
   selector: 'app-root', // selector is define the selector of the componet it can be tag, class or id also
   templateUrl: './app.component.html', // templateUrl specify the html template for the component or template can carry html to visualize
   styleUrls: ['./app.component.css'], //  styleUrls can hold styles  files and styles can define css directly for this component
 })
+
 export class AppComponent {
   title = 'demo';
   firstName:string = 'angular';
   lastName:string = 'developer';
   address:string = 'your current address';
+  
+  userInfo:LoginInfo = {
+    username: '',
+    password: ''
+  };
+  
 
   languages:string[];
 
@@ -25,4 +34,8 @@ export class AppComponent {
   }
 
 
+  loginFormSubmit(loginInfo:NgForm){
+    console.log("Form submitted", loginInfo);
+    console.log(this.userInfo);
+  }
 }
