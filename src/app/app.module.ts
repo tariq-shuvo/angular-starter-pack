@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CalculateAgePipe } from './pipes/calculate-age.pipe';
 import { AgeCalculatorComponent } from './components/age-calculator/age-calculator.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
   {
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     HomeComponent,
     CalculateAgePipe,
     AgeCalculatorComponent,
+    FilterPipe,
   ],
   // load all the global imports 
   imports: [

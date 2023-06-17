@@ -13,6 +13,7 @@ type UserInfo = {
 })
 
 export class AgeCalculatorComponent {
+  searchText = '';
   users:UserInfo[] = [
     {
       name: "user 1",
@@ -43,10 +44,10 @@ export class AgeCalculatorComponent {
     rand = Math.floor(rand * diff);
     rand = rand + min;
 
-    this.users.push({
-      name: `user ${this.users.length}`,
+    this.users = [...this.users, {
+      name: `user ${this.users.length + 1}`,
       phone: "0147897875",
       dob: `${rand}-06-17T11:08:00Z`
-    });
+    }];
   }
 }
