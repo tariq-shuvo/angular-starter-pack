@@ -7,11 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './components/contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { CalculateAgePipe } from './pipes/calculate-age.pipe';
+import { AgeCalculatorComponent } from './components/age-calculator/age-calculator.component';
 
 const appRoutes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "age-calculator",
+    component: AgeCalculatorComponent
   },
   {
     path: "contact-us",
@@ -25,6 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContactComponent,
     HomeComponent,
+    CalculateAgePipe,
+    AgeCalculatorComponent,
   ],
   // load all the global imports 
   imports: [

@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="justify-content-center text-center mt-4 mb-4">
+            <button (click)="addUser()">Add User</button>
+        </div>
+        <div *ngFor="let user of users; let i = index;">
+            <ul>
+                <li><strong>Name:</strong> {{user.name}}</li>
+                <li><strong>Phone:</strong> {{user.phone}}</li>
+                <!-- <li><Strong>Age:</Strong> {{user.dob | date:'medium'}}</li> -->
+                <li><Strong>Age:</Strong> {{user.dob | calculateAge}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
