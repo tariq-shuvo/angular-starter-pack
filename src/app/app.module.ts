@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CalculateAgePipe } from './pipes/calculate-age.pipe';
 import { AgeCalculatorComponent } from './components/age-calculator/age-calculator.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { PasswordStrengthCheckerDirective } from './directives/password-strength-checker.directive';
 
 const appRoutes: Routes = [
   {
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     CalculateAgePipe,
     AgeCalculatorComponent,
     FilterPipe,
+    PasswordStrengthCheckerDirective,
   ],
   // load all the global imports 
   imports: [

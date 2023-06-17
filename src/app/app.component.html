@@ -74,8 +74,10 @@
       </div>
       <div class="form-group mt-2">
         <label for="password">Password</label>
-        <input type="password" [(ngModel)]="userInfo.password" name="password" class="form-control" id="password" placeholder="password"/>
+        <input type="password" [(ngModel)]="userInfo.password" name="password" class="form-control" id="password" placeholder="password" #pwStrength="strengthValue" appPasswordStrengthChecker/>
       </div>
+      <div *ngIf="pwStrength.strengthValue" class="password-strength password-strength-{{pwStrength.strengthValue}} mt-2"><span></span></div>
+      
       <button type="submit" class="btn btn-primary mt-2">Login</button>
     </form>
   </div>

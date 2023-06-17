@@ -4,3 +4,31 @@
 .isActive{
     color: green;
 }
+
+.password-strength{
+    height: 10px;
+    width: 100%;
+    background-color: lightgray;
+    position: relative;
+}
+
+.password-strength > span {
+    position: absolute;
+    z-index: 99999;
+    height: 10px;
+}
+
+.password-strength-1 > span{
+    width: 20% !important;
+    background-color: red; 
+}
+
+.password-strength-2 > span{
+    width: 30% !important;
+    background-color: orange; 
+}
+
+.password-strength-3 > span{
+    width: 100% !important;
+    background-color: green; 
+}
