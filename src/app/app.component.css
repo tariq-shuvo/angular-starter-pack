@@ -4,3 +4,8 @@
 .isActive{
     color: green;
 }
+
+.nav-link-active{
+    color: darkblue;
+    font-weight: bold;
+}

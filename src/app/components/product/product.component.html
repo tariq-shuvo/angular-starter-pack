@@ -1,1 +1,14 @@
-<p>product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-4" *ngFor="let productinfo of products">
+            <div class="card" style="width: 18rem;">
+                <img [src]="productinfo.image" class="card-img-top" [alt]="productinfo.name">
+                <div class="card-body">
+                  <h5 class="card-title">{{productinfo.name}}</h5>
+                  <p class="card-text">{{productinfo.detail}}</p>
+                  <a [routerLink]="['details', productinfo?.id]" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
