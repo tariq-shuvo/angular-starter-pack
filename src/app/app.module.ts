@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ContactComponent } from './components/contact/contact.component';
+// import { ContactComponent } from './components/contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CalculateAgePipe } from './pipes/calculate-age.pipe';
@@ -20,8 +20,15 @@ const appRoutes: Routes = [
     component: AgeCalculatorComponent
   },
   {
+    path: "products",
+    // child modules load through routes 
+    loadChildren:()=>import('./components/product/product.module').then(x=>x.ProductModule)
+  },
+  {
     path: "contact-us",
-    component: ContactComponent
+    // component: ContactComponent,
+    // lazy loading feature in routes 
+    loadComponent:()=>import('./components/contact/contact.component').then(x=>x.ContactComponent)
   }
 ]
 
@@ -29,7 +36,7 @@ const appRoutes: Routes = [
   // load all the components here
   declarations: [
     AppComponent,
-    ContactComponent,
+    // ContactComponent,
     HomeComponent,
     CalculateAgePipe,
     AgeCalculatorComponent,
