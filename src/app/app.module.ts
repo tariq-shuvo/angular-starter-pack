@@ -9,10 +9,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CalculateAgePipe } from './pipes/calculate-age.pipe';
 import { AgeCalculatorComponent } from './components/age-calculator/age-calculator.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  // redirect to added
   {
     path: "",
+    // component: HomeComponent
+    redirectTo: "/home",
+    // set for path match defination
+    pathMatch: 'full'
+  },
+  {
+    path: "home",
     component: HomeComponent
   },
   {
@@ -29,6 +38,11 @@ const appRoutes: Routes = [
     // component: ContactComponent,
     // lazy loading feature in routes 
     loadComponent:()=>import('./components/contact/contact.component').then(x=>x.ContactComponent)
+  },
+  // add a 404 not found route
+  {
+    path: "**",
+    component: PageNotFoundComponent,
   }
 ]
 
